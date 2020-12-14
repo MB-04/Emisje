@@ -85,7 +85,7 @@ library(tidyverse)
 # Dane wejściowe 
 ***
 
-Wraz z pakietem, w pliku 'Dane_wejsciowe.rda' w folderze 'Data' znajduja sie dane dostarczane wraz z pakietem. Wykorzystywane sa w celu pokazania dzialania funkcji.
+Wraz z pakietem, w folderze 'Data' znajduja sie dane dostarczane wraz z pakietem. Wykorzystywane sa w celu pokazania dzialania funkcji.
 Oczywiscie mozliwe jest dodanie wlasnych danych.
         
 ## Wskazniki
