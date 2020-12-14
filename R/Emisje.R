@@ -15,10 +15,12 @@
 #' Dane sa dostepne dla uzytkownika jako obiekty \code{input}, \code{wskazniki}.
 #'
 #' @docType package
-#' @name Emisja
+#' @name Emisje
 #' @import dplyr
 #' @import ggplot2
 #' @import magrittr
 #' @import qpdf
 #' @import tidyverse
 NULL
+
+utils::globalVariables(c("input", "wskazniki", "wynik"))

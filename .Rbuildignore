@@ -1,3 +1,7 @@
 ^Emisje\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^README\.Rmd$
+^rsconect$
+^rsconnect$
+^vignettes/rsconnect$
