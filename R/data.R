@@ -1,4 +1,4 @@
-#' Plik zawierajacy dane zewnetrznye koniecznye do dzialania pakietu
+#' Plik zawierajacy dane zewnetrzne konieczne do dzialania pakietu
 #'
 #' @source Obiekt wskazniki zawiera dane pochodzace
 #'         z EEA - Europejskiej Agnecji Srodowiska.

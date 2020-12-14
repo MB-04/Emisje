@@ -3,7 +3,7 @@
 \docType{data}
 \name{input}
 \alias{input}
-\title{Plik zawierajacy dane zewnetrznye koniecznye do dzialania pakietu}
+\title{Plik zawierajacy dane zewnetrzne konieczne do dzialania pakietu}
 \format{
 Opisy znajduja sie w dokumentacji
 
