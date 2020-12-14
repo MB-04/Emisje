@@ -28,7 +28,7 @@
 #'              euro = "Euro III",
 #'              mode = "",
 #'              substancja = "CO)
-#' }
+#'}
 fun_obl_em <- function(dane = input,
                        kategoria = "Passenger Cars",
                        euro = "Euro 5",
