@@ -1,6 +1,6 @@
 Package: Emisje
 Title: Obliczanie emisji spalin oraz wizualizacja
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
     person(given = "Mateusz",
            family = "Borzecki",
@@ -9,6 +9,7 @@ Authors@R:
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: Pakiet oblicza emisje EMEP/EEA zanieczyszczenia powietrza wybranego rodzaju pojazdu,
              a takze wizualizujacy za pomoca wykresu wartosci wynikowe.
+Depends: R (>= 3.5.0)             
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
