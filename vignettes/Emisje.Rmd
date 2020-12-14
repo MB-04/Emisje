@@ -1,0 +1,166 @@
+---
+title: "Emisje"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Emisje}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo = T,
+  message = F,
+  warning = F
+)
+```
+
+```{r dodatek, include=FALSE, results='hide'}
+library(Emisje)
+```
+
+
+***
+
+**Matusz Borzęcki**
+Numer indeksu: 303981
+
+**AGH** Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie, Wydział Geodezji Górniczej i Inżynierii Środowiska, Katedra Kształtowania i Ochrony Środowiska.
+
+**Kierunek** Geoinformacja
+
+**Przedmiot** Inwentaryzacja Emisji rok III
+
+**e-mail:** *[borzecki@student.agh.edu.pl](borzecki@student.agh.edu.pl)*.
+
+***
+# Wstęp
+***
+
+Pakiet powstal w ramach cwiczen projektowych z przedmiotu Metody Inwentaryzacji i Szacowania Emisji. Prowadzcy: dr Mateusz Reszutek.
+
+Pakiet powstal na bazie dokumentu/raportu "EMEP/EEA air polutanat emission inventory guidbook 2019" autorstwa EEA - Eureopean Enviromental Agency.
+
+Pakiet służy do obliczania emisji zanieczyszczeń emitowanych przez pojazd i wizualizacji tych danych. Funkcje pakietu korzystają z danych dołączonych do pakietu.   
+Dane w pliku 'wskazniki' sa przetworzonymi danymi pochodzacymi z surowego pliku z danymi:  `1.A.3.b.i-iv Road Transport Appendix 4 Emission Factors 2019.xlsx`, dostarczonego do raportu. Plik nie znajduje się w pakiecie. Został on przetworzony, a nastepnie zapisany do obiektu danych `wskazniki`. Dodatkowo pakiet wykorzystuje obiekt `input` który zawiera dane o natężeniu ruchu.  
+
+***
+# Instalacja pakietu
+***
+
+Repozytorium pakietu znajduje się na portalu [github](https://github.com/MB-04).
+Do jego pobrania i instalacji potrzebny jest pakiet `devtools`.
+
+```{r setup, eval=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# pakiet devtools
+if(!require(devtools)) {install.packages("devtools"); require(devtools)}
+# instalcja pakietu Emisja
+devtools::install_github("https://github.com/MB-04/Emisje",force=T,build_vignettes = T)
+library(Emisje)
+```
+
+Ogólne informacje o pakiecie:
+
+```{r echo=TRUE,eval=FALSE}
+help(package = "Emisje")
+```
+
+Zalecane pakiety do załadaowania:
+
+```{r, results='hide'}
+library(dplyr)
+library(magrittr)
+library(qpdf)
+library(utils)
+library(rlang)
+library(stats)
+library(ggplot2)
+library(tidyverse)
+```
+
+***
+# Dane wejściowe 
+***
+
+Wraz z pakietem, w pliku 'Dane_wejsciowe.rda' w folderze 'Data' znajduja sie dane dostarczane wraz z pakietem. Wykorzystywane sa w celu pokazania dzialania funkcji.
+Oczywiscie mozliwe jest dodanie wlasnych danych.
+        
+## Wskazniki
+
+Plik zawiera dane pobrane z EEA, na bazie ktorego stworzono niniejszy pakiet.
+
+Opis danych:
+```{r echo TRUE,eval=FALSE}
+?Emisje::wskazniki
+```
+
+Podglad poczatkowych wierszy obiektu z danymi:
+```{r echo=FALSE,eval=FALSE}
+head(wskazniki)
+```
+
+W pliku znajduja sie nastepujace kolumny:
+```{r echo=FALSE,eval=FALSE}
+colnames(wskazniki)
+```
+
+## Input
+
+Obiekt 'input' zawiera dane przykladowe oraz losowe natezenie ruchu, wykorzystywane do obliczania emisji w funkcji 'fun_obl_em()'. 
+
+Opis danych:
+```{r echo=TRUE,eval=FALSE}
+?Emisje::input
+```
+Podglad danych:
+```{r echo=FALSE,eval=FALSE}
+head(input)
+```
+
+Obiekt zawiera nastepujace kolumny:
+```{r echo=FALSE,eval=FALSE}
+colnames(input)
+```
+
+***
+# Funkcja fun_obl_em()
+***
+
+Funkcja 'fun_obl_em()' wyznacza emisje dla podanego obiektu z danymi, bedacego parametrem podawanym na wejsciu. Oblicza ja w sposob identyczny jak w arkuszu kalkulacyjnym dostarczonym do podrecznika, na bazie ktorego powstal niniejszy pakiet.
+
+Dokumntacja funkcji:
+```{r echo=TRUE,eval=FALSE}
+?fun_obl_em()
+```
+
+W wyniku dzialania funkcji otrzymujemy obiekt z danymi:
+```{r echo=TRUE,eval=FALSE}
+fun_obl_em()
+wynik %>% glimpse()
+```
+
+***
+# Funkcja fun_em_plot()
+***
+
+Wizualizowanie wynikow wykonanych z funkcji fun_obl_em. 
+
+Dokumntacja funkcji:
+```{r echo=TRUE,eval=FALSE}
+?fun_em_plot()
+```
+
+Funkcja wizualizacji wynikow z domyslnymi parametrami
+```{r echo=TRUE, message=FALSE, warning=FALSE,eval=FALSE}
+#wykres zawiera opcje w switchu dlatego nie zostanie wyswietlony
+fun_em_plot() 
+```
+
+***
+
+**Koniec**
+
+***

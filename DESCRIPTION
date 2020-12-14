@@ -18,5 +18,10 @@ Imports:
   dplyr,
   ggplot2,
   magrittr,
+  rlang,
   qpdf,
   tidyverse
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
