@@ -2,7 +2,7 @@
 % Please edit documentation in R/fun_em_plot.R
 \name{fun_em_plot}
 \alias{fun_em_plot}
-\title{Title}
+\title{Funkcja wizualizacji wynikow Emisji}
 \usage{
 fun_em_plot(
   data = wynik,
@@ -17,11 +17,27 @@ fun_em_plot(
 )
 }
 \arguments{
-\item{dpi}{}
+\item{data}{data_frame}
+
+\item{kategoria1}{character - wybor pierwszej kolumny z data}
+
+\item{wartosci1}{character - wybor wartosci filtrujacej pierwsza kolumne}
+
+\item{kategoria2}{character - wybor drugiej kolumny}
+
+\item{wartosci2}{double - wybor kolumny z wartosciami double}
+
+\item{fname}{character - nazwa pliku wykresu ktory zostanie zapisany}
+
+\item{width}{double - szerokosc}
+
+\item{height}{double - wysokosc}
+
+\item{dpi}{double - liczba punktow na cal}
 }
 \value{
-
+plot
 }
 \description{
-Title
+Funkcja rysuje wykresy emisji na podstawie danych utworzonych za pomoca \code{fun_obl_em()}
 }

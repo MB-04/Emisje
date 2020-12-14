@@ -2,7 +2,7 @@
 % Please edit documentation in R/fun_obl_em.R
 \name{fun_obl_em}
 \alias{fun_obl_em}
-\title{Title}
+\title{Funkcja obliczenia emisji spalin}
 \usage{
 fun_obl_em(
   dane = input,
@@ -13,11 +13,27 @@ fun_obl_em(
 )
 }
 \arguments{
-\item{substancja}{}
+\item{dane}{data_frame - dane wejsciowe}
+
+\item{kategoria}{character - kategoria pojazdu}
+
+\item{euro}{character - europejski standard emisji spalin}
+
+\item{mode}{character - miejsce pomiaru}
+
+\item{substancja}{character - typ emitowanego zanieczyszczenia}
 }
 \value{
-
+data_frame
 }
 \description{
-Title
+Funkcja oblicza emisje korzystajac z danych zawartych w obiekcie
+\code{wskazniki}, a tazke \code{input}.
+W obiekcie \code{wskazniki} zapisane sa dane o emisji pobrane z EEA.
+W obiekcie \code{input} zapisane sa stworzone losowo dane o natezeniu ruchu.
+}
+\details{
+Wzor na obliczenie emisji:
+Emisja = Nat x ((Alpha x Procent ^ 2 + Beta x Procent + Gamma + (Delta/Procent))/
+(Epsilon x Procent ^ 2 + Zita x Procent + Hta) x (1-Reduction))
 }
