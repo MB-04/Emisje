@@ -26,7 +26,7 @@ Zawarte pliki z danymi w pakiecie pozwolą na uruchomienie funkcji z domyślnymi
 # Obliczanie emisji:
 fun_obl_em()
 # Wykresy z wynikami:
-fun_plot()
+fun_em_plot()
 ```
 ## Praca z pakietem
 
