@@ -59,6 +59,8 @@ knitr::opts_chunk$set(echo = TRUE)
 if(!require(devtools)) {install.packages("devtools"); require(devtools)}
 # instalcja pakietu Emisja
 devtools::install_github("https://github.com/MB-04/Emisje",force=T,build_vignettes = T)
+# lub
+devtools::install_git("https://github.com/MB-04/Emisje")
 library(Emisje)
 ```
 

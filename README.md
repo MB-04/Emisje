@@ -15,6 +15,8 @@ if (!require(devtools)) {install.packages("devtools"); require(devtools)}
 
 # Pobranie i instalacja pakietu:
 devtools::install_github("https://github.com/MB-04/Emisje",force=T,build_vignettes = T))
+# Lub
+devtools::install_git("https://github.com/MB-04/Emisje")
 library(Emisje)
 ```
 
