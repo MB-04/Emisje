@@ -19,6 +19,16 @@
 #'
 #' @export
 #' @examples
+#' \dontrun{
+#' # Parametry domyslne
+#'   fun_obl_em()
+#' # parametry zmodyfikowane
+#'   fun_obl_em(dane = input,
+#'              kategoria = "Buses",
+#'              euro = "Euro III",
+#'              mode = "",
+#'              substancja = "CO)
+#' }
 fun_obl_em <- function(dane = input,
                        kategoria = "Passenger Cars",
                        euro = "Euro 5",

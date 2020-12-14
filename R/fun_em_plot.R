@@ -16,6 +16,20 @@
 #'
 #' @export
 #' @examples
+#' \dontrun{
+#' # Narysowanie wykresu domyslnego:
+#' fun_em_plot()
+#' # Narysowanie wykresow dla przykladowych danych:
+#' fun_em_plot(dane = wynik,
+#'            kategoria1 = Euro.Standard,
+#'            wartosci1 = "Euro 5",
+#'            kategoria2 = Segment,
+#'            wartosci2 = Nat,
+#'            fname = "plik2.png",
+#'            width = 10,
+#'            height = 8,
+#'            dpi = 600)
+#'}
 fun_em_plot <- function(data = wynik,
                         kategoria1 = Category,
                         wartosci1 = "Passenger Cars",
