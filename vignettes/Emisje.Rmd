@@ -98,12 +98,12 @@ Opis danych:
 ```
 
 Podglad poczatkowych wierszy obiektu z danymi:
-```{r echo=FALSE,eval=FALSE}
+```{r echo=FALSE}
 head(wskazniki)
 ```
 
 W pliku znajduja sie nastepujace kolumny:
-```{r echo=FALSE,eval=FALSE}
+```{r echo=FALSE}
 colnames(wskazniki)
 ```
 
@@ -116,12 +116,12 @@ Opis danych:
 ?Emisje::input
 ```
 Podglad danych:
-```{r echo=FALSE,eval=FALSE}
+```{r echo=FALSE}
 head(input)
 ```
 
 Obiekt zawiera nastepujace kolumny:
-```{r echo=FALSE,eval=FALSE}
+```{r echo=FALSE}
 colnames(input)
 ```
 
@@ -137,9 +137,9 @@ Dokumntacja funkcji:
 ```
 
 W wyniku dzialania funkcji otrzymujemy obiekt z danymi:
-```{r echo=TRUE,eval=FALSE}
+```{r echo=TRUE}
 fun_obl_em()
-wynik %>% glimpse()
+knitr::kable(wynik)
 ```
 
 ***
@@ -148,16 +148,46 @@ wynik %>% glimpse()
 
 Wizualizowanie wynikow wykonanych z funkcji fun_obl_em. 
 
-Dokumntacja funkcji:
+Dokumentacja funkcji:
 ```{r echo=TRUE,eval=FALSE}
 ?fun_em_plot()
 ```
 
 Funkcja wizualizacji wynikow z domyslnymi parametrami
 ```{r echo=TRUE, message=FALSE, warning=FALSE,eval=FALSE}
-#wykres zawiera opcje w switchu dlatego nie zostanie wyswietlony
 fun_em_plot() 
 ```
+
+Wykres 1 - punktowy
+
+```{r echo=FALSE, message=FALSE, warning=FALSE,fig.width=7,fig.height=5}
+   ggplot(wynik, aes(x = wynik$Segment,
+                       y = wynik$Emisja,
+                       color = wynik$Segment)) +
+        geom_point()+
+        labs(title = "Zaleznosc wartosci parametru emisji od wybranego segmentu",
+             x = "Typ segmentu pojazdu",
+             y = "Wartosci Emisji",
+             color = "Segment")
+```
+
+
+Wykres 2 - Boxplot
+
+```{r echo=FALSE, message=FALSE, warning=FALSE,fig.width=7,fig.height=5}
+   ggplot(wynik, aes(x = wynik$Segment,
+                       y = wynik$Emisja,
+                       fill = wynik$Segment)) +
+        geom_boxplot(outlier.shape = NA,
+                     col="red") +
+        theme_grey() +
+        theme(text = element_text(face = "bold")) +
+        labs(title = "Zaleznosc wartosci parametru emisji od wybranego segmentu",
+             x = "Typ segmentu pojazdu",
+             y = "Wartosci Emisji",
+             fill = "Segment")
+```
+
 
 ***
 

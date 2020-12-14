@@ -38,4 +38,4 @@ browseVignettes("Emisje")
 # Help:
 ?Emisje
 ```
-
+Szczegółowy opis można znaleźć: https://rpubs.com/MTB/Emisje
